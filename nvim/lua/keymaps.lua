@@ -14,3 +14,10 @@ keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "Open new tab" })
 keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" })
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+vim.keymap.set('n', '<leader>j', ':m .+1<CR>==', { noremap = true })
+vim.keymap.set('n', '<leader>k', ':m .-2<CR>==', { noremap = true })
+vim.keymap.set('v', '<leader>j', ":m '>+1<CR>gv=gv", { noremap = true })
+vim.keymap.set('v', '<leader>k', ":m '<-2<CR>gv=gv", { noremap = true })
+
+vim.keymap.set('n', '<Leader>d', vim.diagnostic.open_float, { noremap = true, silent = true, desc = "Show diagnostics" })
